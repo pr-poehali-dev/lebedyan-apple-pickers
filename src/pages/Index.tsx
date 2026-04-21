@@ -48,7 +48,7 @@ function Navbar({ messengerOpen, setMessengerOpen }: { messengerOpen: boolean; s
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-1">
-          <span className="font-heading text-2xl font-bold" style={{ background: "linear-gradient(135deg, #FF5C00, #FFD600)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>WORK</span>
+          <span className="font-heading text-2xl font-bold" style={{ background: "linear-gradient(135deg, #FF5C00, #FFD600)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Сбор яблок |</span>
           <span className="font-heading text-2xl font-bold text-white">FORCE</span>
         </div>
 
