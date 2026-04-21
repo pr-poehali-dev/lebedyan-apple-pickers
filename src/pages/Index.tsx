@@ -72,10 +72,7 @@ function Navbar({ messengerOpen, setMessengerOpen }: { messengerOpen: boolean; s
             <Icon name="MessageCircle" size={20} />
             <span className="absolute -top-1 -right-1 w-4 h-4 bg-[#FF5C00] rounded-full text-[10px] font-bold text-white flex items-center justify-center">3</span>
           </button>
-          <button className="hidden md:flex items-center gap-2 px-4 py-2 bg-[#FF5C00] text-white rounded-lg font-body font-semibold text-sm hover:bg-orange-600 transition-all">
-            <Icon name="Zap" size={16} />
-            Найти работу
-          </button>
+          <button className="hidden md:flex items-center gap-2 px-4 py-2 bg-[#FF5C00] text-white rounded-lg font-body font-semibold text-sm hover:bg-orange-600 transition-all">Записаться на сбор</button>
           <button className="md:hidden p-2 text-white/70" onClick={() => setMobileOpen(!mobileOpen)}>
             <Icon name={mobileOpen ? "X" : "Menu"} size={20} />
           </button>
