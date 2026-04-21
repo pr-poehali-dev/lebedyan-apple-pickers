@@ -13,12 +13,9 @@ const NAV_ITEMS = [
 ];
 
 const VACANCIES = [
-  { id: 1, title: "Сборщик яблок", location: "Сад Троекурово, Лебедянь", salary: "от 3 000 ₽/день", type: "Сезонная", emoji: "🍎", hot: true },
-  { id: 2, title: "Сборщик яблок", location: "Сад Агроном, Лебедянь", salary: "от 3 000 ₽/день", type: "Сезонная", emoji: "🍏", hot: true },
-  { id: 3, title: "Сортировщик яблок", location: "Сад Троекурово, Лебедянь", salary: "от 2 500 ₽/день", type: "Сезонная", emoji: "📦", hot: false },
-  { id: 4, title: "Сортировщик яблок", location: "Сад Агроном, Лебедянь", salary: "от 2 500 ₽/день", type: "Сезонная", emoji: "🧺", hot: false },
-  { id: 5, title: "Водитель погрузчика", location: "Сад Троекурово, Лебедянь", salary: "от 4 000 ₽/день", type: "Сезонная", emoji: "🚜", hot: true },
-  { id: 6, title: "Бригадир сборщиков", location: "Сад Агроном, Лебедянь", salary: "от 5 000 ₽/день", type: "Сезонная", emoji: "👨‍🌾", hot: true },
+  { id: 1, title: "Сборщик яблок", location: "Сады Троекурово и Агроном, Лебедянь", salary: "от 4 000 ₽/день", type: "Сезонная", emoji: "🍎", hot: true },
+  { id: 2, title: "Бригадир", location: "Сады Троекурово и Агроном, Лебедянь", salary: "от 3 700 ₽/день", type: "Сезонная", emoji: "👨‍🌾", hot: true },
+  { id: 3, title: "Водитель трактора", location: "Сады Троекурово и Агроном, Лебедянь", salary: "от 3 700 ₽/день", type: "Сезонная", emoji: "🚜", hot: false },
 ];
 
 const FAQ_ITEMS = [
@@ -252,9 +249,8 @@ function SalarySection() {
 
           <div className="space-y-3">
             {[
-              { title: "Оплата за ящик", desc: "Каждый собранный ящик яблок фиксируется и оплачивается. Больше ящиков — больше денег.", icon: "Wallet" },
-              { title: "Ежедневный расчёт", desc: "Деньги выплачиваются каждый день после смены. Никаких задержек — всё прозрачно.", icon: "BarChart3" },
-              { title: "Бонусы за объём", desc: "Выполнил дневной план — получи надбавку. Лучшие сборщики зарабатывают до 5 000 ₽/день.", icon: "TrendingUp" },
+              { title: "Сдельная оплата", desc: "Чем больше килограммов собрал — тем выше заработок. Всё фиксируется честно.", icon: "Wallet" },
+              { title: "Расчёт раз в 3 дня", desc: "Для местных работников выплата производится каждые 3 дня. Без задержек.", icon: "BarChart3" },
               { title: "Жильё и еда — бесплатно", desc: "Проживание и питание предоставляются бесплатно и не вычитаются из зарплаты.", icon: "BadgeCheck" },
             ].map(item => (
               <div key={item.title} className="flex gap-4 p-4 rounded-xl transition-all" style={{ background: "#1A1A1A", border: "1px solid rgba(255,255,255,0.05)" }}>
@@ -413,8 +409,8 @@ function ContactsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
           {[
-            { icon: "Phone", label: "Телефон", value: "+7 (800) 123-45-67", sub: "Бесплатно по России", color: "#FF5C00", bg: "rgba(255,92,0,0.08)", bord: "rgba(255,92,0,0.2)" },
-            { icon: "Mail", label: "Email", value: "sad@lebedyan.ru", sub: "Отвечаем за 15 минут", color: "#FFD600", bg: "rgba(255,214,0,0.08)", bord: "rgba(255,214,0,0.2)" },
+            { icon: "Phone", label: "Телефон", value: "+7 (939) 913-02-10", sub: "Звоните в любое время", color: "#FF5C00", bg: "rgba(255,92,0,0.08)", bord: "rgba(255,92,0,0.2)" },
+            { icon: "Mail", label: "Email", value: "sborapple48@gmail.com", sub: "Отвечаем за 15 минут", color: "#FFD600", bg: "rgba(255,214,0,0.08)", bord: "rgba(255,214,0,0.2)" },
             { icon: "MapPin", label: "Адрес", value: "Лебедянь, Липецкая обл.", sub: "Сады Троекурово и Агроном", color: "#00C2FF", bg: "rgba(0,194,255,0.08)", bord: "rgba(0,194,255,0.2)" },
           ].map(c => (
             <div key={c.label} className="p-6 rounded-2xl text-center" style={{ background: c.bg, border: `1px solid ${c.bord}` }}>
