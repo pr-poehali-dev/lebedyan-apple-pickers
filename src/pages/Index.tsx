@@ -153,7 +153,7 @@ function HeroSection() {
             {[
               { num: "2 сада", label: "Троекурово и Агроном" },
               { num: "500+", label: "Мест для работников" },
-              { num: "Сдельно", label: "Оплата за ящик" },
+              { num: "Сдельная", label: "Оплата" },
             ].map((s) => (
               <div key={s.label}>
                 <div className="font-heading text-3xl font-bold" style={{ background: "linear-gradient(135deg, #FF5C00, #FFD600)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{s.num}</div>
