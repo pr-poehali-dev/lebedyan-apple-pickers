@@ -117,7 +117,7 @@ function HeroSection() {
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: "rgba(255,92,0,0.12)", border: "1px solid rgba(255,92,0,0.3)" }}>
             <span className="w-2 h-2 bg-[#FF5C00] rounded-full animate-pulse" />
-            <span className="font-body text-[#FF5C00] text-sm font-medium">Сезон сбора яблок 2024 — Лебедянь</span>
+            <span className="font-body text-[#FF5C00] text-sm font-medium">Сезон сбора яблок 2026 — Лебедянь</span>
           </div>
 
           <h1 className="font-heading text-6xl md:text-8xl font-bold leading-none mb-6 uppercase">
