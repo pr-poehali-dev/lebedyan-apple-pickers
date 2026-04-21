@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
-const HERO_IMAGE = "https://cdn.poehali.dev/projects/c9be10fe-7961-4d57-a102-495939423a26/files/5ced9d1f-e709-428d-bd33-7621859d6883.jpg";
+const HERO_IMAGE = "https://cdn.poehali.dev/projects/c9be10fe-7961-4d57-a102-495939423a26/files/e4f3a627-689e-47ab-80a9-2f803632de0c.jpg";
 
 const NAV_ITEMS = [
   { id: "home", label: "Главная" },
@@ -13,33 +13,34 @@ const NAV_ITEMS = [
 ];
 
 const VACANCIES = [
-  { id: 1, title: "Сборщик урожая", location: "Краснодарский край", salary: "от 3 500 ₽/день", type: "Сезонная", emoji: "🌾", hot: true },
-  { id: 2, title: "Упаковщик на склад", location: "Московская область", salary: "от 2 800 ₽/день", type: "Постоянная", emoji: "📦", hot: false },
-  { id: 3, title: "Разнорабочий на стройку", location: "Санкт-Петербург", salary: "от 4 000 ₽/день", type: "Проект", emoji: "🏗️", hot: true },
-  { id: 4, title: "Оператор линии", location: "Нижний Новгород", salary: "от 3 200 ₽/день", type: "Постоянная", emoji: "⚙️", hot: false },
-  { id: 5, title: "Курьер-экспедитор", location: "Казань", salary: "от 2 500 ₽/день", type: "Гибкий", emoji: "🚚", hot: false },
-  { id: 6, title: "Грузчик-экспедитор", location: "Екатеринбург", salary: "от 3 800 ₽/день", type: "Постоянная", emoji: "💪", hot: true },
+  { id: 1, title: "Сборщик яблок", location: "Сад Троекурово, Лебедянь", salary: "от 3 000 ₽/день", type: "Сезонная", emoji: "🍎", hot: true },
+  { id: 2, title: "Сборщик яблок", location: "Сад Агроном, Лебедянь", salary: "от 3 000 ₽/день", type: "Сезонная", emoji: "🍏", hot: true },
+  { id: 3, title: "Сортировщик яблок", location: "Сад Троекурово, Лебедянь", salary: "от 2 500 ₽/день", type: "Сезонная", emoji: "📦", hot: false },
+  { id: 4, title: "Сортировщик яблок", location: "Сад Агроном, Лебедянь", salary: "от 2 500 ₽/день", type: "Сезонная", emoji: "🧺", hot: false },
+  { id: 5, title: "Водитель погрузчика", location: "Сад Троекурово, Лебедянь", salary: "от 4 000 ₽/день", type: "Сезонная", emoji: "🚜", hot: true },
+  { id: 6, title: "Бригадир сборщиков", location: "Сад Агроном, Лебедянь", salary: "от 5 000 ₽/день", type: "Сезонная", emoji: "👨‍🌾", hot: true },
 ];
 
 const FAQ_ITEMS = [
-  { q: "Как быстро я могу начать работать?", a: "После регистрации и подбора вакансии — выход возможен уже на следующий день. Оформление занимает 1-2 часа." },
-  { q: "Предоставляется ли жильё?", a: "Да, большинство работодателей предоставляют бесплатное проживание в оборудованных общежитиях или арендуют квартиры." },
-  { q: "Как происходит выплата зарплаты?", a: "Выплата сдельно — ежедневно или еженедельно, зависит от работодателя. Задержек нет, всё фиксируется в системе." },
-  { q: "Нужен ли опыт работы?", a: "Большинство вакансий не требует опыта. Работодатели обучают на месте, достаточно желания работать." },
-  { q: "Как работает мессенджер?", a: "После отклика на вакансию открывается прямой чат с работодателем. Всё общение — внутри платформы, без лишних звонков." },
+  { q: "Когда начинается сезон сбора яблок?", a: "Сезон стартует в августе и длится до октября. Чем раньше откликнешься — тем больше заработаешь за полный сезон." },
+  { q: "Предоставляется ли жильё?", a: "Да, работникам предоставляется бесплатное проживание в общежитии прямо на территории садов Троекурово и Агроном." },
+  { q: "Как считается сдельная оплата?", a: "Оплата за каждый собранный ящик. Чем больше ящиков — тем выше заработок. В среднем опытный сборщик собирает 60–80 ящиков в день." },
+  { q: "Нужен ли опыт сбора яблок?", a: "Опыт не нужен. Бригадир покажет технику сбора прямо на месте — обучение занимает 30 минут." },
+  { q: "Как добраться до садов Лебедяни?", a: "Лебедянь находится в Липецкой области. До города есть прямые автобусы из Москвы, Воронежа, Липецка. От города до садов организован развоз." },
+  { q: "Есть ли питание?", a: "Да, горячее питание 3 раза в день входит в условия работы и не вычитается из зарплаты." },
 ];
 
 const MOCK_CHATS = [
-  { id: 1, name: "ООО АгроПлюс", lastMsg: "Ждём вас в понедельник!", time: "14:23", unread: 2, avatar: "🌾" },
-  { id: 2, name: "СтройГрупп", lastMsg: "Документы приняты, выход завтра", time: "11:05", unread: 0, avatar: "🏗️" },
-  { id: 3, name: "СкладЛогистик", lastMsg: "Добрый день! Вы откликнулись...", time: "Вчера", unread: 1, avatar: "📦" },
+  { id: 1, name: "Сад Троекурово", lastMsg: "Ждём вас в понедельник!", time: "14:23", unread: 2, avatar: "🍎" },
+  { id: 2, name: "Сад Агроном", lastMsg: "Документы приняты, выход завтра", time: "11:05", unread: 0, avatar: "🍏" },
+  { id: 3, name: "Бригадир Иван", lastMsg: "Добрый день! Вы откликнулись...", time: "Вчера", unread: 1, avatar: "👨‍🌾" },
 ];
 
 const MOCK_MESSAGES = [
-  { id: 1, from: "employer", text: "Добрый день! Вы откликнулись на вакансию сборщика урожая.", time: "10:30" },
-  { id: 2, from: "me", text: "Здравствуйте! Да, очень интересует.", time: "10:32" },
-  { id: 3, from: "employer", text: "Отлично. Когда готовы приступить к работе?", time: "10:33" },
-  { id: 4, from: "me", text: "Готов с понедельника. Проживание предоставляется?", time: "10:35" },
+  { id: 1, from: "employer", text: "Добрый день! Вы откликнулись на вакансию сборщика яблок в саду Троекурово.", time: "10:30" },
+  { id: 2, from: "me", text: "Здравствуйте! Да, очень интересует. Когда можно выйти?", time: "10:32" },
+  { id: 3, from: "employer", text: "Выход с 5 августа. Опыт сбора есть?", time: "10:33" },
+  { id: 4, from: "me", text: "Нет, но готов учиться. Жильё предоставляется?", time: "10:35" },
   { id: 5, from: "employer", text: "Да, бесплатное общежитие + питание 3 раза в день. Ждём вас в понедельник!", time: "14:23" },
 ];
 
@@ -116,18 +117,18 @@ function HeroSection() {
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6" style={{ background: "rgba(255,92,0,0.12)", border: "1px solid rgba(255,92,0,0.3)" }}>
             <span className="w-2 h-2 bg-[#FF5C00] rounded-full animate-pulse" />
-            <span className="font-body text-[#FF5C00] text-sm font-medium">Более 500 вакансий сегодня</span>
+            <span className="font-body text-[#FF5C00] text-sm font-medium">Сезон сбора яблок 2024 — Лебедянь</span>
           </div>
 
           <h1 className="font-heading text-6xl md:text-8xl font-bold leading-none mb-6 uppercase">
-            <span className="text-white">ТВОЙ</span><br />
-            <span style={{ background: "linear-gradient(135deg, #FF5C00, #FFD600)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>ЗАРАБОТОК</span><br />
-            <span className="text-white">НАЧИНАЕТСЯ</span><br />
-            <span className="text-white/25">СЕГОДНЯ</span>
+            <span className="text-white">СБОРЩИКИ</span><br />
+            <span style={{ background: "linear-gradient(135deg, #FF5C00, #FFD600)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>ЯБЛОК</span><br />
+            <span className="text-white">В САДЫ</span><br />
+            <span className="text-white/25">ЛЕБЕДЯНИ</span>
           </h1>
 
           <p className="font-body text-lg text-white/55 mb-10 max-w-lg leading-relaxed">
-            Платформа для молодых рабочих — находи вакансии, договаривайся напрямую с работодателем и зарабатывай сдельно.
+            Требуются сборщики яблок в сады <strong className="text-white">Троекурово</strong> и <strong className="text-white">Агроном</strong> города Лебедянь. Сдельная оплата, бесплатное жильё и питание.
           </p>
 
           <div className="flex flex-wrap gap-4">
@@ -150,9 +151,9 @@ function HeroSection() {
 
           <div className="flex gap-8 mt-12">
             {[
-              { num: "12 000+", label: "Трудоустроено" },
-              { num: "850+", label: "Работодателей" },
-              { num: "3 500₽", label: "Средний день" },
+              { num: "2 сада", label: "Троекурово и Агроном" },
+              { num: "500+", label: "Мест для работников" },
+              { num: "3 000₽", label: "Оплата в день" },
             ].map((s) => (
               <div key={s.label}>
                 <div className="font-heading text-3xl font-bold" style={{ background: "linear-gradient(135deg, #FF5C00, #FFD600)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{s.num}</div>
@@ -165,7 +166,7 @@ function HeroSection() {
 
       <div className="absolute bottom-0 left-0 right-0 bg-[#FF5C00] py-3 overflow-hidden">
         <div className="flex animate-ticker whitespace-nowrap">
-          {Array(8).fill("СДЕЛЬНАЯ ОПЛАТА · БЕСПЛАТНОЕ ПИТАНИЕ · ПРОЖИВАНИЕ · БЫСТРЫЙ СТАРТ · ПРЯМОЙ ЧАТ С РАБОТОДАТЕЛЕМ · ").map((t, i) => (
+          {Array(8).fill("СБОРЩИКИ ЯБЛОК · ЛЕБЕДЯНЬ · САД ТРОЕКУРОВО · САД АГРОНОМ · СДЕЛЬНАЯ ОПЛАТА · БЕСПЛАТНОЕ ЖИЛЬЁ И ПИТАНИЕ · ВЫХОД С АВГУСТА · ").map((t, i) => (
             <span key={i} className="font-heading font-bold text-sm text-white/90 uppercase tracking-widest px-4">{t}</span>
           ))}
         </div>
@@ -176,10 +177,10 @@ function HeroSection() {
 
 function ConditionsSection() {
   const conditions = [
-    { icon: "UtensilsCrossed", title: "Питание", desc: "3-разовое питание включено у большинства работодателей. Горячая еда прямо на объекте.", badge: "Бесплатно", grad: "rgba(255,92,0,0.12)", bord: "rgba(255,92,0,0.2)" },
-    { icon: "BedDouble", title: "Проживание", desc: "Оборудованные общежития или квартиры. Wi-Fi, горячая вода, всё необходимое.", badge: "Включено", grad: "rgba(0,194,255,0.1)", bord: "rgba(0,194,255,0.2)" },
-    { icon: "Clock", title: "График", desc: "Гибкий график: сменная работа, вахта 2/2, 5/2. Выбирай удобный формат.", badge: "Гибкий", grad: "rgba(184,255,0,0.1)", bord: "rgba(184,255,0,0.2)" },
-    { icon: "Shield", title: "Безопасность", desc: "Все вакансии проверены. Официальное оформление, спецодежда и инструктаж.", badge: "Гарантия", grad: "rgba(168,85,247,0.1)", bord: "rgba(168,85,247,0.2)" },
+    { icon: "UtensilsCrossed", title: "Питание", desc: "Горячее питание 3 раза в день прямо в садах. Завтрак, обед и ужин — бесплатно для всех работников.", badge: "Бесплатно", grad: "rgba(255,92,0,0.12)", bord: "rgba(255,92,0,0.2)" },
+    { icon: "BedDouble", title: "Проживание", desc: "Бесплатное общежитие на территории садов Троекурово и Агроном. Горячая вода, душ, Wi-Fi.", badge: "Включено", grad: "rgba(0,194,255,0.1)", bord: "rgba(0,194,255,0.2)" },
+    { icon: "Clock", title: "График", desc: "Рабочий день с 7:00 до 18:00 с перерывами. Сезон с августа по октябрь, выход в любой момент.", badge: "Сезон", grad: "rgba(184,255,0,0.1)", bord: "rgba(184,255,0,0.2)" },
+    { icon: "MapPin", title: "Два сада", desc: "Работа в двух садах: Троекурово и Агроном. Оба расположены в Лебедяни, организован развоз.", badge: "Лебедянь", grad: "rgba(168,85,247,0.1)", bord: "rgba(168,85,247,0.2)" },
   ];
 
   return (
@@ -188,10 +189,10 @@ function ConditionsSection() {
         <div className="mb-16">
           <span className="font-body text-[#FF5C00] text-sm font-semibold uppercase tracking-widest">Условия работы</span>
           <h2 className="font-heading text-5xl md:text-6xl font-bold text-white uppercase mt-3">
-            ВСЁ, ЧТО<br />
-            <span style={{ background: "linear-gradient(135deg, #FF5C00, #FFD600)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>НУЖНО ДЛЯ ЖИЗНИ</span>
+            УСЛОВИЯ<br />
+            <span style={{ background: "linear-gradient(135deg, #FF5C00, #FFD600)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>В САДАХ ЛЕБЕДЯНИ</span>
           </h2>
-          <p className="font-body text-white/45 mt-4 max-w-lg">Работодатели обеспечивают базовые потребности — тебе остаётся только работать и зарабатывать.</p>
+          <p className="font-body text-white/45 mt-4 max-w-lg">Сады Троекурово и Агроном обеспечивают всем необходимым — тебе остаётся только собирать яблоки и зарабатывать.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -251,10 +252,10 @@ function SalarySection() {
 
           <div className="space-y-3">
             {[
-              { title: "Ежедневная выплата", desc: "Деньги приходят каждый день после смены — никаких задержек", icon: "Wallet" },
-              { title: "Прозрачный учёт", desc: "Каждая смена фиксируется в системе. Ты всегда знаешь, сколько заработал", icon: "BarChart3" },
-              { title: "Бонусы за объём", desc: "Выполнил план — получи бонус. До +30% к дневной ставке", icon: "TrendingUp" },
-              { title: "Без вычетов за жильё", desc: "Проживание и питание не вычитаются из зарплаты — это полностью бесплатно", icon: "BadgeCheck" },
+              { title: "Оплата за ящик", desc: "Каждый собранный ящик яблок фиксируется и оплачивается. Больше ящиков — больше денег.", icon: "Wallet" },
+              { title: "Ежедневный расчёт", desc: "Деньги выплачиваются каждый день после смены. Никаких задержек — всё прозрачно.", icon: "BarChart3" },
+              { title: "Бонусы за объём", desc: "Выполнил дневной план — получи надбавку. Лучшие сборщики зарабатывают до 5 000 ₽/день.", icon: "TrendingUp" },
+              { title: "Жильё и еда — бесплатно", desc: "Проживание и питание предоставляются бесплатно и не вычитаются из зарплаты.", icon: "BadgeCheck" },
             ].map(item => (
               <div key={item.title} className="flex gap-4 p-4 rounded-xl transition-all" style={{ background: "#1A1A1A", border: "1px solid rgba(255,255,255,0.05)" }}>
                 <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: "rgba(255,92,0,0.12)" }}>
@@ -275,7 +276,7 @@ function SalarySection() {
 
 function VacanciesSection() {
   const [filter, setFilter] = useState("Все");
-  const types = ["Все", "Постоянная", "Сезонная", "Проект", "Гибкий"];
+  const types = ["Все", "Сезонная"];
   const filtered = filter === "Все" ? VACANCIES : VACANCIES.filter(v => v.type === filter);
 
   return (
@@ -284,8 +285,8 @@ function VacanciesSection() {
         <div className="mb-12">
           <span className="font-body text-[#B8FF00] text-sm font-semibold uppercase tracking-widest">Вакансии</span>
           <h2 className="font-heading text-5xl md:text-6xl font-bold text-white uppercase mt-3">
-            ГОРЯЧИЕ<br />
-            <span style={{ background: "linear-gradient(135deg, #B8FF00, #00C2FF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>ПРЕДЛОЖЕНИЯ</span>
+            ВАКАНСИИ<br />
+            <span style={{ background: "linear-gradient(135deg, #B8FF00, #00C2FF)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>САДОВ ЛЕБЕДЯНИ</span>
           </h2>
         </div>
 
@@ -413,8 +414,8 @@ function ContactsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
           {[
             { icon: "Phone", label: "Телефон", value: "+7 (800) 123-45-67", sub: "Бесплатно по России", color: "#FF5C00", bg: "rgba(255,92,0,0.08)", bord: "rgba(255,92,0,0.2)" },
-            { icon: "Mail", label: "Email", value: "hello@workforce.ru", sub: "Отвечаем за 15 минут", color: "#FFD600", bg: "rgba(255,214,0,0.08)", bord: "rgba(255,214,0,0.2)" },
-            { icon: "MapPin", label: "Офис", value: "Москва, ул. Правды, 21", sub: "Пн–Пт 9:00–18:00", color: "#00C2FF", bg: "rgba(0,194,255,0.08)", bord: "rgba(0,194,255,0.2)" },
+            { icon: "Mail", label: "Email", value: "sad@lebedyan.ru", sub: "Отвечаем за 15 минут", color: "#FFD600", bg: "rgba(255,214,0,0.08)", bord: "rgba(255,214,0,0.2)" },
+            { icon: "MapPin", label: "Адрес", value: "Лебедянь, Липецкая обл.", sub: "Сады Троекурово и Агроном", color: "#00C2FF", bg: "rgba(0,194,255,0.08)", bord: "rgba(0,194,255,0.2)" },
           ].map(c => (
             <div key={c.label} className="p-6 rounded-2xl text-center" style={{ background: c.bg, border: `1px solid ${c.bord}` }}>
               <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-4" style={{ background: "rgba(255,255,255,0.06)" }}>
@@ -531,7 +532,7 @@ function Footer() {
             <span className="font-heading text-xl font-bold" style={{ background: "linear-gradient(135deg, #FF5C00, #FFD600)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>WORK</span>
             <span className="font-heading text-xl font-bold text-white">FORCE</span>
           </div>
-          <p className="font-body text-white/25 text-xs">Платформа найма для молодых рабочих</p>
+          <p className="font-body text-white/25 text-xs">Сады Троекурово и Агроном · г. Лебедянь</p>
         </div>
         <div className="flex gap-6 flex-wrap justify-center">
           {NAV_ITEMS.map(item => (
