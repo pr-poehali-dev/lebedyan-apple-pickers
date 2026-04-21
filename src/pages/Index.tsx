@@ -49,7 +49,7 @@ function Navbar({ messengerOpen, setMessengerOpen }: { messengerOpen: boolean; s
       <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center gap-1">
           <span className="font-heading text-2xl font-bold" style={{ background: "linear-gradient(135deg, #FF5C00, #FFD600)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Сбор яблок |</span>
-          <span className="font-heading text-2xl font-bold text-white">FORCE</span>
+          <span className="font-heading text-2xl font-bold text-white"> Лебедянь сезон 2026</span>
         </div>
 
         <div className="hidden md:flex items-center gap-1">
